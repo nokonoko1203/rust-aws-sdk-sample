@@ -4,7 +4,7 @@ use aws_sdk_s3::types::{BucketLocationConstraint, CreateBucketConfiguration};
 use aws_sdk_s3::{error::SdkError, Client};
 use std::str;
 
-pub async fn create_bucket(
+async fn create_bucket(
     client: &Client,
     bucket_name: &str,
     region: &str,
@@ -21,7 +21,7 @@ pub async fn create_bucket(
         .await
 }
 
-pub async fn delete_bucket(client: &Client, bucket_name: &str) -> Result<(), Error> {
+async fn delete_bucket(client: &Client, bucket_name: &str) -> Result<(), Error> {
     client.delete_bucket().bucket(bucket_name).send().await?;
     Ok(())
 }
