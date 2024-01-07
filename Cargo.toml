@@ -3,7 +3,6 @@ name = "rust-aws"
 version = "0.1.0"
 edition = "2021"
 
-
 [dependencies]
 anyhow = "1.0.79"
 aws-config = { version = "1.0.1", features = ["behavior-version-latest"] }
